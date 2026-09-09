@@ -215,7 +215,7 @@ button,input,select,textarea{font:inherit}
 <script>
 // UPDATE THIS after deploying the Render backend.
 // Example: https://rootslink-malaria-api.onrender.com
-const API_BASE_URL = window.ROOTSLINK_API_URL || 'https://YOUR-RENDER-SERVICE.onrender.com';
+const API_BASE_URL = window.ROOTSLINK_API_URL || 'https://rootslink-malaria-api.onrender.com';
 
 async function apiRequest(path, options = {}) {
   const response = await fetch(`${API_BASE_URL}${path}`, {
