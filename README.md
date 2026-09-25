@@ -1,4 +1,4 @@
-# Rootslink Africa Malaria Outreach Prototype
+# MalaGuide 2.0 · Rootslink Africa Malaria Outreach Intelligence
 
 This package contains a GitHub Pages frontend and a Render FastAPI backend.
 
@@ -10,6 +10,20 @@ GitHub Pages frontend
 → PostgreSQL database
 
 The application is designed for non-identifying malaria outreach and education program data.
+
+## MalaGuide 2.0 MVP capabilities
+
+- Offline outreach queue with automatic synchronization
+- Consent-based GPS capture and privacy-preserving hotspot signals
+- Coded household follow-up without personal names
+- Explainable community-level malaria risk estimates
+- Voice input and audio playback for the malaria education assistant
+- Consent-aware reminder tracking for future SMS and WhatsApp integration
+- District and NGO reporting views with CSV and printable monthly summaries
+- Role and data-scope preview for six programme roles
+- Installable Progressive Web App support
+
+The current risk logic supports programme prioritization only. It does not diagnose individuals. Production authentication, messaging, predictive modelling and identifiable data use require server-side security, formal validation and approved data governance.
 
 ## Folder structure
 

@@ -1,0 +1,10 @@
+{
+  "name": "MalaGuide 2.0",
+  "short_name": "MalaGuide",
+  "description": "Offline malaria outreach, follow-up and community surveillance support.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f5f8f6",
+  "theme_color": "#0b6b4b",
+  "icons": []
+}

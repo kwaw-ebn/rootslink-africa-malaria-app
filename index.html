@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rootslink Africa Malaria Outreach Intelligence</title>
+<meta name="theme-color" content="#0b6b4b">
+<link rel="manifest" href="manifest.webmanifest">
 <style>
 :root{
   --green:#0b6b4b; --green2:#15966a; --lime:#dff5e8; --dark:#123126;
@@ -62,8 +64,9 @@ button,input,select,textarea{font:inherit}
 .modal ul{padding-left:20px;line-height:1.65}
 .notice{padding:12px 13px;border-radius:9px;background:var(--bluebg);color:#173f9e;font-size:12px;margin-bottom:14px}
 .status-line{display:flex;gap:10px;align-items:center;margin-bottom:10px}.dot{width:9px;height:9px;border-radius:50%;background:var(--green2)}
-@media(max-width:980px){.app{grid-template-columns:1fr}.sidebar{position:relative;height:auto}.sidebar-footer{display:none}.nav{grid-template-columns:repeat(3,1fr)}.kpis,.edu-grid{grid-template-columns:repeat(2,1fr)}.grid2,.ai-wrap{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr 1fr}.span3{grid-column:span 2}}
-@media(max-width:620px){.content{padding:14px}.topbar{padding:14px}.kpis,.edu-grid,.form-grid{grid-template-columns:1fr}.span2,.span3{grid-column:span 1}.nav{grid-template-columns:1fr 1fr}.brand{padding-bottom:12px}}
+.top-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end}.sync-pill{display:inline-flex;align-items:center;gap:7px;padding:6px 10px;border:1px solid var(--border);border-radius:999px;background:#fff;font-size:11px;font-weight:800}.sync-pill .dot.offline{background:#d97706}.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.feature-card{padding:18px}.feature-card strong{display:block;color:var(--dark);font-size:24px}.risk-row{display:grid;grid-template-columns:minmax(140px,1fr) 2fr 70px;gap:12px;align-items:center;padding:11px 0;border-bottom:1px solid #edf1ef}.risk-track{height:10px;background:#edf2ef;border-radius:99px;overflow:hidden}.risk-fill{height:100%;background:linear-gradient(90deg,var(--green2),#efb13b,#c53c30)}.map-board{position:relative;min-height:320px;background:linear-gradient(135deg,#e8f4ee,#d5ebe3);border:1px solid #cde0d7;border-radius:14px;overflow:hidden}.map-board:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(11,107,75,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(11,107,75,.08) 1px,transparent 1px);background-size:34px 34px}.map-point{position:absolute;transform:translate(-50%,-50%);width:22px;height:22px;border-radius:50%;border:4px solid rgba(255,255,255,.8);box-shadow:0 4px 12px rgba(0,0,0,.18)}.map-point.high{background:#b42318}.map-point.medium{background:#d97706}.map-point.low{background:#15966a}.map-legend{display:flex;gap:14px;flex-wrap:wrap;margin-top:11px;font-size:12px}.map-legend i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px}.toolbar{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:14px}.role-banner{padding:12px 15px;background:#e8efff;color:#173f9e;border-radius:10px;margin-bottom:16px;font-size:13px}.report-sheet{padding:22px}.report-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:15px 0}.report-metrics div{background:#f4f8f6;border-radius:10px;padding:14px}.report-metrics b{display:block;font-size:23px;color:var(--green)}.voice-state{font-size:12px;color:var(--muted);margin-left:8px}.install{display:none}
+@media(max-width:980px){.app{grid-template-columns:1fr}.sidebar{position:relative;height:auto}.sidebar-footer{display:none}.nav{grid-template-columns:repeat(3,1fr)}.kpis,.edu-grid,.feature-grid{grid-template-columns:repeat(2,1fr)}.grid2,.ai-wrap{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr 1fr}.span3{grid-column:span 2}.report-metrics{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.content{padding:14px}.topbar{padding:14px;align-items:flex-start}.kpis,.edu-grid,.form-grid,.feature-grid{grid-template-columns:1fr}.span2,.span3{grid-column:span 1}.nav{grid-template-columns:1fr 1fr}.brand{padding-bottom:12px}.risk-row{grid-template-columns:1fr}.report-metrics{grid-template-columns:1fr 1fr}}
 </style>
 </head>
 <body>
@@ -79,14 +82,18 @@ button,input,select,textarea{font:inherit}
     <button class="active" data-page="overview">▦ Overview</button>
     <button data-page="newoutreach">＋ New Outreach</button>
     <button data-page="followup">◎ Follow-up Tracker</button>
+    <button data-page="households">⌂ Households</button>
+    <button data-page="surveillance">◈ Surveillance</button>
     <button data-page="malaguide">✦ MalaGuide</button>
     <button data-page="malariaqa">◉ Malaria Q&A</button>
     <button data-page="education">▤ Education Center</button>
+    <button data-page="reports">▥ Reports</button>
+    <button data-page="access">⚙ Access</button>
   </div>
   <div class="sidebar-footer">Community malaria sensitization support tool • Rootslink Africa</div>
 </aside>
 <main class="main">
-<header class="topbar"><div><h2 id="screenTitle">Overview</h2><span>Agona East District malaria outreach support</span></div><div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:flex-end"><span style="display:inline-block;padding:6px 10px;border-radius:999px;background:#fff3d6;color:#8a4b08;font-weight:800;border:1px solid #f1d28a;font-size:11px;letter-spacing:.02em">PROTOTYPE / PILOT VERSION</span><span id="today"></span></div></header>
+<header class="topbar"><div><h2 id="screenTitle">Overview</h2><span>Agona East District malaria outreach support</span></div><div class="top-actions"><button id="installBtn" class="btn btn-light install" type="button">Install app</button><button id="syncBtn" class="btn btn-light" type="button">Sync</button><span class="sync-pill"><i id="networkDot" class="dot"></i><span id="networkState">Online</span> · <span id="queueCount">0 pending</span></span><span style="display:inline-block;padding:6px 10px;border-radius:999px;background:#fff3d6;color:#8a4b08;font-weight:800;border:1px solid #f1d28a;font-size:11px;letter-spacing:.02em">MALAGUIDE 2.0 MVP</span><span id="today"></span></div></header>
 <div class="content">
 <section id="overview" class="page active">
  <div class="page-title" style="display:flex;justify-content:space-between;gap:14px;align-items:flex-start;flex-wrap:wrap">
@@ -113,6 +120,9 @@ button,input,select,textarea{font:inherit}
     <div class="field"><label>Date</label><input id="date" type="date" required></div>
     <div class="field"><label>Institution Type</label><select id="type" required><option value="">Select</option><option>School</option><option>Mosque</option><option>Church</option><option>Community Group</option></select></div>
     <div class="field"><label>Institution / Community</label><input id="institution" placeholder="e.g. Abodom Methodist Church" required></div>
+    <div class="field"><label>GPS latitude</label><input id="latitude" inputmode="decimal" placeholder="Capture or enter"></div>
+    <div class="field"><label>GPS longitude</label><input id="longitude" inputmode="decimal" placeholder="Capture or enter"></div>
+    <div class="field"><label>Location consent</label><select id="gpsConsent"><option value="no">Not provided</option><option value="yes">Consent provided</option></select><button id="gpsBtn" class="btn btn-light" type="button">Capture GPS</button></div>
     <div class="field"><label>Male Reached</label><input id="male" type="number" min="0" value="0" required></div>
     <div class="field"><label>Female Reached</label><input id="female" type="number" min="0" value="0" required></div>
     <div class="field"><label>Knowledge Score After Session (%)</label><input id="knowledge" type="number" min="0" max="100" value="70" required></div>
@@ -124,6 +134,31 @@ button,input,select,textarea{font:inherit}
   <div class="form-actions"><button type="reset" class="btn btn-light">Clear</button><button type="submit" class="btn btn-primary">Save Outreach Record</button></div>
  </form>
  <div id="saveResult" style="margin-top:14px"></div>
+</section>
+<section id="households" class="page">
+ <div class="page-title"><h2>Household Follow-up</h2><p>Track coded households and scheduled follow-up without recording names in this MVP.</p></div>
+ <div class="notice">Use a generated household code only. Do not enter names, phone numbers or identifiable medical information.</div>
+ <form id="householdForm" class="card panel">
+  <div class="form-grid">
+   <div class="field"><label>Household code</label><input id="householdCode" placeholder="HH-AG-001" required></div>
+   <div class="field"><label>Community</label><input id="householdCommunity" required></div>
+   <div class="field"><label>Follow-up date</label><input id="householdDue" type="date" required></div>
+   <div class="field"><label>Reason</label><select id="householdReason"><option>Net use follow-up</option><option>Referral follow-up</option><option>Education reinforcement</option><option>Environmental action</option></select></div>
+   <div class="field"><label>Status</label><select id="householdStatus"><option>Scheduled</option><option>Completed</option><option>Missed</option></select></div>
+   <div class="field"><label>Reminder consent</label><select id="reminderConsent"><option value="no">No</option><option value="yes">Yes</option></select></div>
+  </div>
+  <div class="form-actions"><button class="btn btn-primary" type="submit">Save follow-up</button></div>
+ </form>
+ <div class="card panel" style="margin-top:16px"><h3>Follow-up register</h3><div id="householdTable"></div></div>
+</section>
+<section id="surveillance" class="page">
+ <div class="page-title"><h2>Community Risk and Hotspots</h2><p>Explainable population-level signals calculated from outreach indicators. This is not individual diagnosis.</p></div>
+ <div class="feature-grid" id="riskKpis"></div>
+ <div class="grid2" style="margin-top:16px">
+  <div class="card panel"><h3>Community risk estimates</h3><div id="riskRows"></div></div>
+  <div class="card panel"><h3>Privacy-preserving hotspot view</h3><div id="hotspotMap" class="map-board"></div><div class="map-legend"><span><i style="background:#b42318"></i>High</span><span><i style="background:#d97706"></i>Medium</span><span><i style="background:#15966a"></i>Low</span></div><p class="muted">Markers represent aggregated community signals and do not show household coordinates.</p></div>
+ </div>
+ <div class="card panel"><h3>Model explanation</h3><p class="muted">The MVP combines reported ITN use, post-session knowledge, misconception severity, testing practice and season. It shows contributing indicators and uncertainty. A validated forecasting model will require historical case counts, rainfall, population denominators and later-period evaluation.</p></div>
 </section>
 <section id="followup" class="page">
  <div class="page-title" style="display:flex;justify-content:space-between;gap:14px;align-items:flex-start;flex-wrap:wrap">
@@ -178,8 +213,22 @@ button,input,select,textarea{font:inherit}
      </div>
      <div class="field"><label>Your question</label><textarea id="question" placeholder="Example: Can malaria be caused by working in the sun?"></textarea></div><br>
      <button id="askBtn" class="btn btn-primary">Ask Question</button>
+     <button id="voiceBtn" class="btn btn-light" type="button">Speak question</button><button id="readBtn" class="btn btn-light" type="button">Read response</button><span id="voiceState" class="voice-state"></span>
    </div>
    <div id="qaOutput" class="card ai-output"><div class="empty">Ask a malaria question to see a clear program-aligned response.</div></div>
+ </div>
+</section>
+<section id="reports" class="page">
+ <div class="page-title"><h2>Monthly Reports</h2><p>Generate an operational summary from the currently available outreach and follow-up records.</p></div>
+ <div class="toolbar"><input id="reportMonth" type="month"><button id="buildReportBtn" class="btn btn-primary" type="button">Generate report</button><button id="csvBtn" class="btn btn-light" type="button">Download CSV</button><button id="printBtn" class="btn btn-light" type="button">Print or save PDF</button></div>
+ <div id="reportOutput" class="card report-sheet"><div class="empty">Select a month and generate the report.</div></div>
+</section>
+<section id="access" class="page">
+ <div class="page-title"><h2>Role and Data Access Preview</h2><p>Preview how MalaGuide can adapt navigation and data scope for different programme roles.</p></div>
+ <div class="role-banner"><strong>MVP security note:</strong> this role selector demonstrates permissions in the interface. Production use requires server-verified accounts, secure sessions, audit logs and organization-specific access rules.</div>
+ <div class="card panel">
+  <div class="form-grid"><div class="field"><label>Current role</label><select id="roleSelect"><option>Administrator</option><option>District Health Officer</option><option>NGO Programme Manager</option><option>Field Supervisor</option><option>Community Health Worker</option><option>Data Officer</option></select></div><div class="field"><label>District</label><input value="Agona East" disabled></div><div class="field"><label>Organization</label><input value="Rootslink Africa" disabled></div></div>
+  <div id="roleSummary" class="analysis-block" style="margin-top:18px"></div>
  </div>
 </section>
 <section id="education" class="page">
@@ -372,7 +421,9 @@ outreachForm.addEventListener('submit', async e=>{
    itn:+itn.value,
    myth:myth.value,
    test:testPractice.value,
-   notes:notes.value.trim()
+   notes:notes.value.trim(),
+   latitude:gpsConsent.value==='yes'?latitude.value.trim():'',
+   longitude:gpsConsent.value==='yes'?longitude.value.trim():''
  };
  try{
    const rec=await apiRequest('/api/outreaches',{
@@ -385,13 +436,17 @@ outreachForm.addEventListener('submit', async e=>{
    e.target.reset();
    date.value=new Date().toISOString().slice(0,10);
  }catch(err){
-   saveResult.innerHTML=`<div class="card panel"><strong>Could not save.</strong><p class="muted">${esc(err.message)}</p><p class="muted">Check that the Render backend is awake and that API_BASE_URL points to the deployed service.</p></div>`;
+   const localScore=priorityScore(payload.knowledge,payload.itn,payload.myth,payload.test);
+   const queued={...payload,id:'offline-'+Date.now(),total:payload.male+payload.female,status:'Pending',...localScore,offline:true};
+   const queue=getQueue();queue.push(queued);setQueue(queue);records.push(queued);renderAll();
+   saveResult.innerHTML=`<div class="card panel"><strong>Saved securely on this device.</strong><p class="muted">The record is queued for synchronization when the server is available. Do not clear browser data before it syncs.</p></div>`;
+   e.target.reset();date.value=new Date().toISOString().slice(0,10);
  }
 });
 async function loadRecords(){
   try{
     const data=await apiRequest('/api/outreaches');
-    records=Array.isArray(data)?data:[];
+    records=[...(Array.isArray(data)?data:[]),...getQueue()];
     renderAll();
     const status=document.getElementById('apiStatus');
     if(status){
@@ -399,7 +454,7 @@ async function loadRecords(){
       status.style.color='#067647';
     }
   }catch(err){
-    records=[];
+    records=getQueue();
     renderAll();
     const status=document.getElementById('apiStatus');
     if(status){
@@ -409,7 +464,7 @@ async function loadRecords(){
     console.warn(err);
   }
 }
-function renderAll(){renderOverview();renderFollowup()}
+function renderAll(){renderOverview();renderFollowup();renderSurveillance();renderReport();updateQueueState()}
 const malaGuideRules = [
   {
     id:'test_before_treatment',
@@ -723,7 +778,7 @@ function answerQuestion(q){
  qaOutput.innerHTML=`<div class="analysis-block"><h4>${title}</h4>${answer}</div><div class="notice">This educational assistant supports community sensitization. It is not a diagnostic tool and does not replace assessment by a qualified health professional.</div>`;
 }
 askBtn.onclick=()=>{if(question.value.trim())answerQuestion(question.value.trim())};
-document.querySelectorAll('.chip').forEach(b=>b.onclick=()=>{question.value=b.dataset.q;answerQuestion(b.dataset.q)});
+document.querySelectorAll('#malariaqa .chip').forEach(b=>b.onclick=()=>{question.value=b.dataset.q;answerQuestion(b.dataset.q)});
 function renderEducation(){
  educationGrid.innerHTML=messages.map((m,i)=>`<div class="card edu-card" onclick="openEdu(${i})"><div class="edu-num">${i+1}</div><h3>${m.title}</h3><p>${m.short}</p></div>`).join('');
 }
@@ -734,11 +789,83 @@ function openEdu(i){
 }
 function closeModal(){eduModal.classList.remove('open')}
 eduModal.addEventListener('click',e=>{if(e.target===eduModal)closeModal()});
+
+// MalaGuide 2.0 offline, surveillance, follow-up, reporting and access preview.
+const QUEUE_KEY='malaguide_offline_queue_v2',HOUSEHOLD_KEY='malaguide_households_v2';
+function getQueue(){try{return JSON.parse(localStorage.getItem(QUEUE_KEY)||'[]')}catch(e){return[]}}
+function setQueue(v){localStorage.setItem(QUEUE_KEY,JSON.stringify(v));updateQueueState()}
+function getHouseholds(){try{return JSON.parse(localStorage.getItem(HOUSEHOLD_KEY)||'[]')}catch(e){return[]}}
+function setHouseholds(v){localStorage.setItem(HOUSEHOLD_KEY,JSON.stringify(v));renderHouseholds()}
+function updateQueueState(){
+ const count=getQueue().length;queueCount.textContent=`${count} pending`;networkState.textContent=navigator.onLine?'Online':'Offline';networkDot.classList.toggle('offline',!navigator.onLine);
+}
+async function syncQueue(){
+ if(!navigator.onLine){alert('The device is offline. Records remain safely queued on this device.');return}
+ const queue=getQueue();if(!queue.length){await loadRecords();return}
+ const failed=[];
+ for(const item of queue){
+  const {id,total,status,priority,score,reasons,offline,latitude,longitude,...payload}=item;
+  if(latitude||longitude) payload.notes=[payload.notes,`GPS captured with consent: ${latitude||'n/a'}, ${longitude||'n/a'}`].filter(Boolean).join(' | ');
+  try{await apiRequest('/api/outreaches',{method:'POST',body:JSON.stringify(payload)})}catch(e){failed.push(item)}
+ }
+ setQueue(failed);await loadRecords();
+ alert(failed.length?`${failed.length} record(s) could not synchronize yet.`:'All offline records synchronized successfully.');
+}
+syncBtn.onclick=syncQueue;window.addEventListener('online',()=>{updateQueueState();syncQueue()});window.addEventListener('offline',updateQueueState);
+gpsBtn.onclick=()=>{
+ if(gpsConsent.value!=='yes'){alert('Select “Consent provided” before capturing a location.');return}
+ if(!navigator.geolocation){alert('Location capture is not supported on this device.');return}
+ gpsBtn.textContent='Capturing…';navigator.geolocation.getCurrentPosition(p=>{latitude.value=p.coords.latitude.toFixed(5);longitude.value=p.coords.longitude.toFixed(5);gpsBtn.textContent='GPS captured'},()=>{gpsBtn.textContent='Capture GPS';alert('Location could not be captured. Check browser permission and try again.')},{enableHighAccuracy:true,timeout:12000});
+};
+
+householdForm.onsubmit=e=>{e.preventDefault();const list=getHouseholds();list.push({id:Date.now(),code:householdCode.value.trim(),community:householdCommunity.value.trim(),due:householdDue.value,reason:householdReason.value,status:householdStatus.value,consent:reminderConsent.value});setHouseholds(list);e.target.reset();householdDue.value=new Date().toISOString().slice(0,10)};
+function deleteHousehold(id){setHouseholds(getHouseholds().filter(x=>x.id!==id))}
+function renderHouseholds(){
+ const list=getHouseholds();if(!list.length){householdTable.innerHTML='<div class="empty">No coded household follow-ups have been added.</div>';return}
+ householdTable.innerHTML=`<div class="table-wrap"><table><thead><tr><th>Code</th><th>Community</th><th>Due</th><th>Reason</th><th>Status</th><th>Reminder</th><th></th></tr></thead><tbody>${list.map(x=>`<tr><td>${esc(x.code)}</td><td>${esc(x.community)}</td><td>${x.due}</td><td>${esc(x.reason)}</td><td><span class="badge ${x.status==='Completed'?'low':x.status==='Missed'?'high':'medium'}">${x.status}</span></td><td>${x.consent==='yes'?'Consent recorded':'Not enabled'}</td><td><button class="btn btn-danger" onclick="deleteHousehold(${x.id})">Delete</button></td></tr>`).join('')}</tbody></table></div>`;
+}
+
+function riskFor(r){const seasonal=[4,5,6,7,9,10].includes(new Date().getMonth()+1)?10:3;return Math.min(100,Math.round((100-r.itn)*.32+(100-r.knowledge)*.28+(r.test==='poor'?22:r.test==='mixed'?11:0)+(r.myth==='strong'?16:r.myth==='some'?8:0)+seasonal))}
+function renderSurveillance(){
+ if(!document.getElementById('riskRows'))return;
+ const grouped={};records.forEach(r=>{const key=r.institution||'Unknown';(grouped[key]??=[]).push(r)});
+ const communities=Object.entries(grouped).map(([name,items])=>({name,score:Math.round(items.reduce((a,r)=>a+riskFor(r),0)/items.length),items})).sort((a,b)=>b.score-a.score);
+ const high=communities.filter(x=>x.score>=60).length,medium=communities.filter(x=>x.score>=35&&x.score<60).length;
+ riskKpis.innerHTML=`<div class="card feature-card"><span class="muted">Communities assessed</span><strong>${communities.length}</strong></div><div class="card feature-card"><span class="muted">High signal</span><strong>${high}</strong></div><div class="card feature-card"><span class="muted">Medium signal</span><strong>${medium}</strong></div>`;
+ riskRows.innerHTML=communities.length?communities.map(x=>`<div class="risk-row"><b>${esc(x.name)}</b><div class="risk-track"><div class="risk-fill" style="width:${x.score}%"></div></div><span class="badge ${x.score>=60?'high':x.score>=35?'medium':'low'}">${x.score}%</span></div>`).join(''):'<div class="empty">Save outreach records to generate community risk signals.</div>';
+ hotspotMap.innerHTML=communities.map((x,i)=>{const left=15+((i*37)%70),top=18+((i*53)%68),level=x.score>=60?'high':x.score>=35?'medium':'low';return `<button class="map-point ${level}" style="left:${left}%;top:${top}%" title="${esc(x.name)}: ${x.score}% signal" aria-label="${esc(x.name)} ${x.score}% signal"></button>`}).join('');
+}
+
+function monthRecords(){const m=reportMonth.value;return m?records.filter(r=>String(r.date).startsWith(m)):records}
+function renderReport(){
+ if(!document.getElementById('reportOutput')||!reportMonth.value)return;const rows=monthRecords(),people=rows.reduce((a,r)=>a+(+r.total||0),0),follow=rows.filter(r=>r.priority==='High'||r.priority==='Medium'),completed=follow.filter(r=>r.status==='Completed').length;
+ reportOutput.innerHTML=`<p class="muted">MalaGuide 2.0 operational summary · ${esc(reportMonth.value)}</p><h2>Monthly Malaria Outreach Report</h2><div class="report-metrics"><div><b>${rows.length}</b><span>Outreaches</span></div><div><b>${people}</b><span>People reached</span></div><div><b>${follow.length}</b><span>Follow-ups required</span></div><div><b>${follow.length?Math.round(completed/follow.length*100):0}%</b><span>Follow-up completed</span></div></div><h3>Programme interpretation</h3><p>${rows.length?'The report summarizes non-identifying outreach records, education indicators and follow-up status for programme review. Communities with higher signals should be reviewed alongside routine surveillance data before action is taken.':'No outreach records were found for this month.'}</p><div class="notice">Population signals are exploratory. They do not diagnose malaria and must be interpreted by authorized public health professionals.</div>`;
+}
+buildReportBtn.onclick=renderReport;reportMonth.value=new Date().toISOString().slice(0,7);printBtn.onclick=()=>window.print();
+csvBtn.onclick=()=>{const rows=monthRecords(),head=['date','type','institution','male','female','total','knowledge','itn','priority','status'],csv=[head.join(','),...rows.map(r=>head.map(k=>`"${String(r[k]??'').replaceAll('"','""')}"`).join(','))].join('\n'),url=URL.createObjectURL(new Blob([csv],{type:'text/csv'})),a=document.createElement('a');a.href=url;a.download=`malaguide-report-${reportMonth.value||'all'}.csv`;a.click();URL.revokeObjectURL(url)};
+
+const roleRules={
+ 'Administrator':'Manage configuration, accounts, permissions and audit logs across authorized programmes.',
+ 'District Health Officer':'View district indicators, surveillance signals, field activity and approved reports.',
+ 'NGO Programme Manager':'View assigned programmes, communities, targets and aggregated outcomes only.',
+ 'Field Supervisor':'Assign activities, review field records and monitor follow-up completion.',
+ 'Community Health Worker':'Register assigned outreach and coded household follow-up records, including offline work.',
+ 'Data Officer':'Validate records, resolve quality issues and prepare authorized exports.'
+};
+function renderRole(){localStorage.setItem('malaguide_role',roleSelect.value);roleSummary.innerHTML=`<h4>${esc(roleSelect.value)}</h4><p>${roleRules[roleSelect.value]}</p><p><strong>Data scope:</strong> Rootslink Africa · Agona East · assigned communities and responsibilities.</p>`}roleSelect.value=localStorage.getItem('malaguide_role')||'Community Health Worker';roleSelect.onchange=renderRole;renderRole();
+
+const SpeechRecognition=window.SpeechRecognition||window.webkitSpeechRecognition;
+voiceBtn.onclick=()=>{if(!SpeechRecognition){voiceState.textContent='Voice input is not supported in this browser.';return}const rec=new SpeechRecognition();rec.lang='en-GH';rec.onstart=()=>voiceState.textContent='Listening…';rec.onresult=e=>{question.value=e.results[0][0].transcript;answerQuestion(question.value);voiceState.textContent='Question captured.'};rec.onerror=()=>voiceState.textContent='Voice input could not start.';rec.start()};
+readBtn.onclick=()=>{if(!('speechSynthesis'in window)){voiceState.textContent='Audio response is not supported.';return}const text=qaOutput.innerText.trim();if(!text)return;speechSynthesis.cancel();speechSynthesis.speak(new SpeechSynthesisUtterance(text))};
+
+let installPrompt=null;window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();installPrompt=e;installBtn.style.display='inline-flex'});installBtn.onclick=async()=>{if(!installPrompt)return;installPrompt.prompt();await installPrompt.userChoice;installPrompt=null;installBtn.style.display='none'};
+if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js'));
+renderHouseholds();renderSurveillance();renderReport();updateQueueState();
 document.querySelectorAll('.nav button').forEach(btn=>btn.onclick=()=>{
  document.querySelectorAll('.nav button').forEach(x=>x.classList.remove('active'));btn.classList.add('active');
  document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));
  document.getElementById(btn.dataset.page).classList.add('active');
- screenTitle.textContent=btn.textContent.replace(/[▦＋◎✦◉▤]/g,'').trim();
+ screenTitle.textContent=btn.textContent.replace(/[▦＋◎✦◉▤⌂◈▥⚙]/g,'').trim();
 });
 function esc(v=''){return String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]))}
 today.textContent=new Date().toLocaleDateString(undefined,{year:'numeric',month:'short',day:'numeric'});
